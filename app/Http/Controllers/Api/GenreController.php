@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Gender;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
-class GenderController extends Controller
+class GenreController extends Controller
 {
     private $rules = [
         'name' => 'required|max:255',
@@ -20,7 +20,7 @@ class GenderController extends Controller
      */
     public function index()
     {
-        return Gender::all();
+        return Genre::all();
     }
 
     /**
@@ -32,43 +32,43 @@ class GenderController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, $this->rules);//Se usasse CategoryRequest, não usaria esse método
-        return Gender::create($request -> all());
+        return Genre::create($request -> all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gender  $gender
+     * @param  \App\Models\Genre  $Genre
      * @return \Illuminate\Http\Response
      */
-    public function show(Gender $gender)
+    public function show(Genre $Genre)
     {
-        return $gender;
+        return $Genre;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Gender  $gender
+     * @param  \App\Models\Genre  $Genre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gender $gender)
+    public function update(Request $request, Genre $Genre)
     {
         $this -> validate($request, $this->rules);
-        $gender->update($request->all());
-        return $gender;
+        $Genre->update($request->all());
+        return $Genre;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gender  $gender
+     * @param  \App\Models\Genre  $Genre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gender $gender)
+    public function destroy(Genre $Genre)
     {
-        $gender->delete();
+        $Genre->delete();
         return response()->noContent(); //204 - No content
     }
 }

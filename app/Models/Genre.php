@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Gender extends Model
+class Genre extends Model
 {
     //aqui preciso por quais campos são seguros
     use SoftDeletes, \App\Models\Traits\Uuid;
