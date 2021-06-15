@@ -32,7 +32,9 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, $this->rules);//Se usasse CategoryRequest, não usaria esse método
-        return Category::create($request -> all());
+        $category = Category::create($request -> all());
+        $category->refresh();
+        return $category;
     }
 
     /**
