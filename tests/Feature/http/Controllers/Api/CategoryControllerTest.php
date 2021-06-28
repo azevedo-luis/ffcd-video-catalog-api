@@ -2,12 +2,10 @@
 
 namespace Tests\Feature\http\Controllers\Api;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+
 use App\Models\Category;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\TestResponse;
 use Tests\Traits\TestSaves;
 use Tests\Traits\TestValidations;
 
@@ -75,11 +73,6 @@ class CategoryControllerTest extends TestCase
     }
 
     public function testUpdate(){
-        $this->category = factory(Category::class)->create([
-            'description' => 'description',
-            'is_active' => false,
-        ]);
-
         $data = [
             'description' => 'test',
             'name' => 'test',

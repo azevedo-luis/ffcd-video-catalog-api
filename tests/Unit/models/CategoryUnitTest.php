@@ -5,9 +5,8 @@ namespace Tests\Unit\modelsß;
 use PHPUnit\Framework\TestCase;
 use App\Models\Category;
 use App\Models\Genre;
-// use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class CategoryTest extends TestCase
+class CategoryUnitTest extends TestCase
 {
     // use DatabaseMigrations;
     /**
@@ -22,14 +21,6 @@ class CategoryTest extends TestCase
         $category = new Category();
         $this -> assertEquals($fillable, $category -> getFillable());
     }
-
-    // public function testIfUseTraits(){
-    //     $traits = [
-    //         SoftDeletes::class, Uuid::class
-    //     ];
-    //     $categoryTraits = array_keys(class_uses(Category::class));
-    //     $this->assertEquals($traits, $categoryTraits);
-    // }
 
     public function testIncrementingAttribute(){
         $category = new Category();
