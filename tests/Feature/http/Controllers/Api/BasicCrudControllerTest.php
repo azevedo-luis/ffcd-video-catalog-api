@@ -3,21 +3,13 @@
 namespace Tests\Feature\http\Controllers\Api;
 
 use App\Http\Controllers\Api\BasicCrudController;
-use App\Http\Controllers\Api\CategoryController;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use App\Models\Category;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\TestResponse;
 use Tests\Stubs\Controllers\CategoryControllerStub;
 use Tests\Stubs\Models\CategoryStub;
 use Illuminate\Http\Request;
 use Mockery;
-use Tests\Traits\TestSaves;
-use Tests\Traits\TestValidations;
 
 class BasicCrudControllerTest extends TestCase
 {

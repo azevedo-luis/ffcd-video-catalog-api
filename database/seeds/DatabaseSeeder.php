@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\CastMember;
+use App\Models\Video;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         $this -> call(CategoriesTableSeeder::class);
         $this -> call(GenresTableSeeder::class);
+        $this -> call(CastMemberTableSeeder::class);
+        $this -> call(VideosTableSeeder::class);
     }
 }
     
