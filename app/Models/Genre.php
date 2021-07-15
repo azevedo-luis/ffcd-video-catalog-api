@@ -14,4 +14,8 @@ class Genre extends Model
     protected $casts = ['is_active' => 'boolean'];
     public $incrementing = false;
     protected $KeyType = 'String';
+
+    public function categories(){
+        return $this->belongsToMany(Category::class)->withTrashed();
+    }    
 }
