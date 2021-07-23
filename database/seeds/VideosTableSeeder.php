@@ -35,10 +35,10 @@ class VideosTableSeeder extends Seeder
                     array_merge(
                         $video->toArray(), //thumb_file, banner_file
                         [
-                            //'thumb_file' => $self->getImageFile(),
-                            //'banner_file' => $self->getImageFile(),
-                            //'trailer_file' => $self->getVideoFile(),
-                            //'video_file' => $self->getVideoFile(),
+                            'thumb_file' => $self->getImageFile(),
+                            'banner_file' => $self->getImageFile(),
+                            'trailer_file' => $self->getVideoFile(),
+                            'video_file' => $self->getVideoFile(),
                         ],
                         $this->relations
                     )
@@ -60,13 +60,13 @@ class VideosTableSeeder extends Seeder
         $this->relations['genres_id'] = $genresId;
     }
 
-    // public function getImageFile()
-    // {
-    //     return new UploadedFile(
-    //         storage_path('faker/thumbs/Laravel Framework.png'),
-    //         'Laravel Framework.png'
-    //     );
-    // }
+    public function getImageFile()
+    {
+        return new UploadedFile(
+            storage_path('faker/thumbs/Laravel Framework.png'),
+            'Laravel Framework.png'
+        );
+    }
 
     public function getVideoFile()
     {
